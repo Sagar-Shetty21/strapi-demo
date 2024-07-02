@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "webhook_responses",
+  "info": {
+    "singularName": "webhook-response",
+    "pluralName": "webhook-responses",
+    "displayName": "Webhook Response"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "response": {
+      "type": "json"
+    }
+  }
+}
