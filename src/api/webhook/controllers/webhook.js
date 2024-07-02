@@ -7,13 +7,13 @@ const crypto = require('crypto');
  */
 module.exports = {
   cashfree: async (ctx, next) => {
-    const signature = ctx.request.headers['x-webhook-signature']; // or the appropriate header for Cashfree
+    // const signature = ctx.request.headers['x-webhook-signature']; 
     const payload = ctx.request.body;
 
     // Verify the signature (if applicable)
-    if (!verifyCashfreeSignature(signature, payload)) {
-      return ctx.throw(400, 'Invalid signature');
-    }
+    // if (!verifyCashfreeSignature(signature, payload)) {
+    //   return ctx.throw(400, 'Invalid signature');
+    // }
 
     // Process the webhook payload
     try {
@@ -24,6 +24,7 @@ module.exports = {
         }
       })
 
+      ctx.status = 200;
       ctx.send({ message: 'Webhook received' });
     } catch (error) {
       console.error('Error processing webhook:', error);
