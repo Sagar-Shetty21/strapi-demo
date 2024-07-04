@@ -6,4 +6,10 @@ module.exports = ({ env }) => ({
       jwtSecret: env('JWT_SECRET') || crypto.randomBytes(16).toString('base64'),
     },
   },
+  'import-export-entries': {
+    enabled: true,
+    config: {
+      // See `Config` section.
+    },
+  },
 });
