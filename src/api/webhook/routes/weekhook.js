@@ -11,5 +11,23 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: 'GET',
+      path: '/webhook/whatsapp',
+      handler: 'webhook.whatsapp',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
+    {
+      method: 'POST',
+      path: '/webhook/whatsapp',
+      handler: 'webhook.whatsapp',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };

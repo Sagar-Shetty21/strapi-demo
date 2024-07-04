@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "whatsapp_responses",
+  "info": {
+    "singularName": "whatsapp-response",
+    "pluralName": "whatsapp-responses",
+    "displayName": "Whatsapp Response"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "response": {
+      "type": "json"
+    }
+  }
+}

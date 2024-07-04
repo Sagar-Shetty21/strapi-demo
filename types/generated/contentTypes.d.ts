@@ -362,37 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiWebhookResponseWebhookResponse
-  extends Schema.CollectionType {
-  collectionName: 'webhook_responses';
-  info: {
-    singularName: 'webhook-response';
-    pluralName: 'webhook-responses';
-    displayName: 'Webhook Response';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    response: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::webhook-response.webhook-response',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::webhook-response.webhook-response',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -819,6 +788,68 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiWebhookResponseWebhookResponse
+  extends Schema.CollectionType {
+  collectionName: 'webhook_responses';
+  info: {
+    singularName: 'webhook-response';
+    pluralName: 'webhook-responses';
+    displayName: 'Webhook Response';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    response: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::webhook-response.webhook-response',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::webhook-response.webhook-response',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWhatsappResponseWhatsappResponse
+  extends Schema.CollectionType {
+  collectionName: 'whatsapp_responses';
+  info: {
+    singularName: 'whatsapp-response';
+    pluralName: 'whatsapp-responses';
+    displayName: 'Whatsapp Response';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    response: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::whatsapp-response.whatsapp-response',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::whatsapp-response.whatsapp-response',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -829,7 +860,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::webhook-response.webhook-response': ApiWebhookResponseWebhookResponse;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -838,6 +868,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::webhook-response.webhook-response': ApiWebhookResponseWebhookResponse;
+      'api::whatsapp-response.whatsapp-response': ApiWhatsappResponseWhatsappResponse;
     }
   }
 }
